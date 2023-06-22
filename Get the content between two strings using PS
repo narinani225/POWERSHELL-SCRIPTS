@@ -1,0 +1,11 @@
+$content = Get-Content "C:\temp\Content.txt"
+$string1 = "Paragraphs"
+$string2 = "papers"
+ 
+ $pattern = "$String1(.*?)$String2"
+ write-host $pattern
+
+ $result = [regex]::Match($content,$pattern).Groups[1].value
+
+   
+ write-output $result
