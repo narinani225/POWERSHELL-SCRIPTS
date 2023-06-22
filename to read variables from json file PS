@@ -1,0 +1,16 @@
+$inputput = "C:\Users\LENOVO\VariableGroups\CrewingAPI-DEV.json"
+$jout = Get-Content -Path $input -Raw  | ConvertFrom-Json
+
+ 
+
+$keys = $jout.variables
+
+ 
+
+$keys | Foreach-Object {
+    foreach ($property in $_.PSObject.Properties) {
+        $name=$property.name
+        $value= $keys.$name.value
+        Write-host value of $name is $value
+    }
+}
