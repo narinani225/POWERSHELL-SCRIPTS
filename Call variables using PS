@@ -1,0 +1,5 @@
+$test = "$(repo-name)-prod-branch"
+
+$branch= [Environment]::GetEnvironmentVariable($test)
+
+echo $branch
